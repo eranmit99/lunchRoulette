@@ -17,12 +17,10 @@ let conn = mongoose.connect(CONNECTION_STRING,{
 });
 
 let connection = mongoose.connection;
-
-mongoose.Promise = Promise;
+                 mongoose.Promise = Promise;
 
 let router = require('./routes')();
 let port = config.server.port;
-
 
 
 //register all api controllers routes
