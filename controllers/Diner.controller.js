@@ -34,19 +34,17 @@ class Diner {
         }
     }
 
-    static *getDiner() {
+    static *getDiners() {
 
         const dinerData = this.request.body;
         let cUsers = null;
 
-        yield models.Diner.find({email: new RegExp(dinerData.email, 'i') }, (err, user)=> {
-            cUsers = user;
+        yield models.Diner.find({}, (err, users)=> {
+            cUsers = users;
         })
 
         this.body = cUsers;
     }
-
-
 }
 
 

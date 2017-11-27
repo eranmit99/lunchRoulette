@@ -5,7 +5,6 @@ const dinerController = require("./controllers/Diner.controller");
 module.exports = function () {
     let router = new Router();
     router.post("/api/addDiner", dinerController.addDiner);
-    router.get("/api/getDiners", dinerController.getDiner);
-
+    router.get("/api/getDiners", dinerController.getDiners);
     return router;
 };
