@@ -1,0 +1,27 @@
+{
+  "name": "dinnerroulette",
+  "version": "1.0.0",
+  "description": "",
+  "main": "config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Eran Mitrani",
+  "license": "ISC",
+  "dependencies": {
+    "deep-diff": "^0.3.4",
+    "koa": "^1.2.2",
+    "koa-body": "^1.4.0",
+    "koa-qs": "^2.0.0",
+    "koa-router": "^5.4.0",
+    "lodash": "^4.14.2",
+    "mongoose": "^4.5.8",
+    "mongoose-auto-increment": "^5.0.1",
+    "backend-kit": "~0.0.1",
+    "path": "^0.12.7",
+    "qs": "^6.2.1",
+    "rc": "^1.1.6",
+    "request": "^2.74.0"
+  }
+}

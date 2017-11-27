@@ -1,0 +1,10 @@
+/node_modules/
+/.idea/
+*.log
+.DS_Store
+.tmp
+dist
+build
+temp
+history
+
