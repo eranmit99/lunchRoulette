@@ -9,7 +9,6 @@ class Diner {
     static *addDiner(ctx, next) {
 
         const dinerData = this.request.body;
-        const dinerSchema = new models.Diner(dinerData);
 
         let cUsers = null;
 
@@ -23,6 +22,8 @@ class Diner {
             return;
         }
 
+        const dinerSchema = new models.Diner(dinerData);
+
         try {
             yield dinerSchema.save();
             this.body = 'success';
@@ -31,6 +32,18 @@ class Diner {
             this.status = err.status || 500;
             this.body = err.message;
         }
+    }
+
+    static *getDiner() {
+
+        const dinerData = this.request.body;
+        let cUsers = null;
+
+        yield models.Diner.find({email: new RegExp(dinerData.email, 'i') }, (err, user)=> {
+            cUsers = user;
+        })
+
+        this.body = cUsers;
     }
 
 

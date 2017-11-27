@@ -23,13 +23,16 @@ mongoose.Promise = Promise;
 let router = require('./routes')();
 let port = config.server.port;
 
+// allow sending static content
+app.use(function *(){
+    yield send(this, this.path, { root: __dirname + '/public' });
+})
 
+//register all controllers routes
 app.use(koaBody({formidable: {uploadDir: __dirname}}))
     .use(router.routes())
     .use(router.allowedMethods())
-    .use(function *(){
-        yield send(this, this.path, { root: __dirname + '/public' });
-    })
+
 
 app.listen(port, function () {
     console.info('KOA server listening on port %d in %s mode', port, app.env);
